@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<nav>
+    <span class="top">Sticky</span>
+    <span>Jump to:</span>
+    <ul>
+        <li><a href="#variables">Variables</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#arrow-functions">Arrow Functions</a></li>
+        <li><a href="#array-methods">Array Methods</a></li>
+        <li><a href="#objects">Objects</a></li>
+    </ul>
+</nav>
+<div>
+    <h1>JavaScript Fundamentals</h1>
+
+    <h2 id="variables"><a href="https://javascript.info/variables" target="_blank">Variables</a></h2>
+    
+    <h3>Working with variables</h3>
+    <ol>
+        <li>Declare two variables: <code>admin</code> and <code>name</code>.</li>
+        <li>Assign the value "John" to name.</li>
+        <li>Copy the value from name to admin.</li>
+        <li>Show the value of admin using alert (must output “John”).</li>
+    </ol>
+
+    <hr>
+    
+    <h3>Giving the right name</h3>
+    <ol>
+        <li>Create a variable with the name of our planet. How would you name such a variable?</li>
+        <li>Create a variable to store the name of a current visitor to a website. How would you name that variable?</li>
+    </ol>
+
+    <hr>
+    
+    <h3>Uppercase const?</h3>
+    <p>Examine the following code:</p>
+    <pre>
+        <code>
+    const birthday = '18.04.1982';
+    
+    const age = someCode(birthday);    </code>
+    </pre>
+    <p>Here we have a constant birthday for the date, and also the age constant.</p>
+    <p>
+        The age is calculated from birthday using someCode(), 
+        which means a function call that we didn’t explain yet (we will soon!),
+        but the details don’t matter here, 
+        the point is that age is calculated somehow based on the birthday.
+    </p>
+    <p>Would it be right to use upper case for birthday? For age? Or even for both?</p>
+    <pre>
+        <code>
+    const BIRTHDAY = '18.04.1982'; // make birthday uppercase?
+
+    const AGE = someCode(BIRTHDAY); // make age uppercase?    </code>
+    </pre>
+
+    <!--
+    We generally use upper case for constants that are “hard-coded”. Or, in other words, 
+    when the value is known prior to execution and directly written into the code.
+
+    In this code, birthday is exactly like that. So we could use the upper case for it.
+
+    In contrast, age is evaluated in run-time. Today we have one age, a year after we’ll have another one. 
+    It is constant in a sense that it does not change through the code execution. 
+    But it is a bit “less of a constant” than birthday: it is calculated, so we should keep the lower case for it.
+    -->
+
+    
+    <hr>
+
+
+    <h2 id="functions"><a href="https://javascript.info/function-basics" target="_blank">Functions — Basics</a></h2>
+    
+    <h3>Is "else" required?</h3>
+    <p>The following function returns true if the parameter age is greater than 18.</p>
+    <p>Otherwise it asks for a confirmation and returns its result:</p>
+    <pre>
+        <code>
+    function checkAge(age) {
+        if (age > 18) {
+            return true;
+        } else {
+        // ...
+        return confirm('Did parents allow you?');
+        }
+    }    </code>
+    </pre>
+    <p>Will the function work differently if else is removed?</p>
+    <pre>
+        <code>
+    function checkAge(age) {
+        if (age > 18) {
+            return true;
+        }
+        // ...
+        return confirm('Did parents allow you?');
+    }    </code>
+    </pre>
+    <p>Is there any difference in the behavior of these two variants?</p>
+
+    <hr>
+    
+    <h3>Rewrite the function using '?' or '||'</h3>
+    <p>The following function returns true if the parameter age is greater than 18.</p>
+    <p>Otherwise it asks for a confirmation and returns its result</p>
+    <pre>
+    <code>
+    function checkAge(age) {
+        if (age > 18) {
+            return true;
+        } else {
+            return confirm('Did parents allow you?');
+        }
+    }    </code>
+    </pre>
+    <p>Rewrite it, to perform the same, but without if, in a single line.</p>
+    <p>Make two variants of checkAge:</p>
+    <ol>
+        <li>Using a question mark operator ?</li>
+        <li>Using OR ||</li>
+    </ol>
+
+    <hr>
+
+    <h3>Function min(a, b)</h3>
+    <p>Write a function min(a,b) which returns the least of two numbers a and b.</p>
+    <p>For instance:</p>
+    <pre>
+        <code>
+    min(2, 5) == 2
+    min(3, -1) == -1
+    min(1, 1) == 1    </code>
+    </pre>
+
+    <hr>
+
+    <h3>Function pow(x, n)</h3>
+    <p>Write a function pow(x,n) that returns x in power n. Or, in other words, 
+    multiplies x by itself n times and returns the result.</p>
+    <pre>
+        <code>
+    pow(3, 2) = 3 * 3 = 9
+    pow(3, 3) = 3 * 3 * 3 = 27
+    pow(1, 100) = 1 * 1 * ...* 1 = 1    </code>
+    </pre>
+    <p>Create a web-page that prompts for x and n, and then shows the result of pow(x,n).</p>
+    <p>P.S. In this task the function should support only natural values of n: integers up from 1.</p>
+
+
+    <hr>
+
+
+    <h2 id="arrow-functions"><a href="https://javascript.info/arrow-functions-basics" target="_blank">Arrow Functions — Basics</a></h2>
+
+    <h3>Rewrite with arrow functions</h3>
+    <p>Replace Function Expressions with arrow functions in the code below:</p>
+    <pre>
+        <code>
+    function ask(question, yes, no) {
+        if (confirm(question)) yes();
+        else no();
+    }
+
+    ask(
+        "Do you agree?",
+        function() { alert("You agreed."); },
+        function() { alert("You canceled the execution."); }
+    );    </code>
+    </pre>
+
+
+    <hr>
+
+
+    <h2 id="array-methods"><a href="https://javascript.info/array-methods" target="_blank">Array Methods</a></h2>
+    
+    <h3>Translate border-left-width to borderLeftWidth</h3>
+    <p>Write the function camelize(str) that changes dash-separated words like “my-short-string” into camel-cased “myShortString”.</p>
+
+    <p>That is: removes all dashes, each word after dash becomes uppercased.</p>
+
+    <span>Examples:</span>
+
+    <pre>
+        <code>
+    camelize("background-color") == 'backgroundColor';
+    camelize("list-style-image") == 'listStyleImage';
+    camelize("-webkit-transition") == 'WebkitTransition';    </code>
+    </pre>
+
+    <p>P.S. Hint: use split to split the string into an array, transform it and join back.</p>
+
+    <hr>
+
+    <h3>Filter range</h3>
+    <p>Write a function filterRange(arr, a, b) that gets an array arr, looks for elements with values higher or equal to a and lower or equal to b and return a result as an array.</p>
+    <p>The function should not modify the array. It should return the new array.</p>
+    <span>For instance:</span>
+    <pre>
+        <code>
+    let arr = [5, 3, 8, 1];
+
+    let filtered = filterRange(arr, 1, 4);
+
+    alert( filtered ); // 3,1 (matching values)
+
+    alert( arr ); // 5,3,8,1 (not modified)    </code>
+    </pre>
+
+    <hr>
+
+    <h3>Filter range "in place"</h3>
+    <p>Write a function filterRangeInPlace(arr, a, b) that gets an array arr and removes from it all values except those that are between a and b. The test is: a ≤ arr[i] ≤ b.</p>
+    <p>The function should only modify the array. It should not return anything.</p>
+    <span>For instance:</span>
+    <pre>
+        <code>
+    let arr = [5, 3, 8, 1];
+
+    filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+
+    alert( arr ); // [3, 1]    </code>
+    </pre>
+
+    <hr>
+
+    <h3>Sort in decreasing order</h3>
+    <pre>
+        <code>
+    let arr = [5, 2, 1, -10, 8];
+
+    // ... your code to sort it in decreasing order
+
+    alert( arr ); // 8, 5, 2, 1, -10    </code>
+    </pre>
+
+    <hr>
+
+    <h3>Copy and sort array</h3>
+    <p>We have an array of strings arr. We’d like to have a sorted copy of it, but keep arr unmodified.</p>
+    <p>Create a function copySorted(arr) that returns such a copy.</p>
+    <pre>
+        <code>
+    let arr = ["HTML", "JavaScript", "CSS"];
+
+    let sorted = copySorted(arr);
+
+    alert( sorted ); // CSS, HTML, JavaScript
+    alert( arr ); // HTML, JavaScript, CSS (no changes)    </code>
+    </pre>
+
+    <hr>
+
+    <h3>Create an extendable calculator</h3>
+    <p>Create a constructor function Calculator that creates “extendable” calculator objects.</p>
+    <p>The task consists of two parts.</p>
+    <ol>
+        <li>
+            <section>
+                <p>First, implement the method calculate(str) that takes a string like "1 + 2" in the format “NUMBER operator NUMBER” (space-delimited) and returns the result. Should understand plus + and minus -.</p>
+
+                <span>Usage example:</span>
+                <pre>
+                    <code>
+    let calc = new Calculator;
+
+    alert( calc.calculate("3 + 7") ); // 10    </code>
+                </pre>
+            </section>
+        </li>
+        <li>
+            <section>
+                <p>Then add the method addMethod(name, func) that teaches the calculator a new operation. It takes the operator name and the two-argument function func(a,b) that implements it.</p>
+                <p>For instance, let’s add the multiplication *, division / and power **:</p>
+
+                <pre>
+                    <code>
+    let powerCalc = new Calculator;
+    powerCalc.addMethod("*", (a, b) => a * b);
+    powerCalc.addMethod("/", (a, b) => a / b);
+    powerCalc.addMethod("**", (a, b) => a ** b);
+    
+    let result = powerCalc.calculate("2 ** 3");
+    alert( result ); // 8    </code>
+                </pre>
+            </section>
+        </li>
+    </ol>
+    <p>No parentheses or complex expressions in this task.</p>
+    <p>The numbers and the operator are delimited with exactly one space.</p>
+    <p>There may be error handling if you’d like to add it.</p>
+
+    <hr>
+
+    <h3>Map to names</h3>
+    <p>You have an array of user objects, each one has user.name. Write the code that converts it into an array of names.</p>
+    <span>For instance:</span>
+    <pre>
+        <code>
+    let john = { name: "John", age: 25 };
+    let pete = { name: "Pete", age: 30 };
+    let mary = { name: "Mary", age: 28 };
+
+    let users = [ john, pete, mary ];
+
+    let names = /* ... your code */
+
+    alert( names ); // John, Pete, Mary</code>
+    </pre>
+
+    <hr>
+
+    <h3>Map to objects</h3>
+    <p>You have an array of user objects, each one has name, surname and id.</p>
+    <p>Write the code to create another array from it, of objects with id and fullName, where fullName is generated from name and surname.</p>
+    <span>For instance:</span>
+    <pre>
+        <code>
+    let john = { name: "John", surname: "Smith", id: 1 };
+    let pete = { name: "Pete", surname: "Hunt", id: 2 };
+    let mary = { name: "Mary", surname: "Key", id: 3 };
+    
+    let users = [ john, pete, mary ];
+    
+    let usersMapped = /* ... your code ... */
+    
+    /*
+    usersMapped = [
+      { fullName: "John Smith", id: 1 },
+      { fullName: "Pete Hunt", id: 2 },
+      { fullName: "Mary Key", id: 3 }
+    ]
+    */
+    
+    alert( usersMapped[0].id ) // 1
+    alert( usersMapped[0].fullName ) // John Smith</code>
+    </pre>
+    <p>So, actually you need to map one array of objects to another. Try using => here. There’s a small catch.</p>
+
+    <hr>
+
+    <h3>Sort users by age</h3>
+    <p>Write the function sortByAge(users) that gets an array of objects with the age property and sorts them by age.</p>
+    <span>For instance:</span>
+    <pre>
+        <code>
+    let john = { name: "John", age: 25 };
+    let pete = { name: "Pete", age: 30 };
+    let mary = { name: "Mary", age: 28 };
+    
+    let arr = [ pete, john, mary ];
+    
+    sortByAge(arr);
+    
+    // now: [john, mary, pete]
+    alert(arr[0].name); // John
+    alert(arr[1].name); // Mary
+    alert(arr[2].name); // Pete      </code>
+    </pre>
+
+    <hr>
+
+    <h3>Shuffle an array</h3>
+    <p>Write the function shuffle(array) that shuffles (randomly reorders) elements of the array.</p>
+    <p>Multiple runs of shuffle may lead to different orders of elements. For instance:</p>
+    <pre>
+        <code>
+    let arr = [1, 2, 3];
+
+    shuffle(arr);
+    // arr = [3, 2, 1]
+    
+    shuffle(arr);
+    // arr = [2, 1, 3]
+    
+    shuffle(arr);
+    // arr = [3, 1, 2]
+    // ... </code>
+    </pre>
+    <p>All element orders should have an equal probability. For instance, [1,2,3] can be reordered as [1,2,3] or [1,3,2] or [3,1,2] etc, with equal probability of each case.</p>
+
+    <hr>
+
+    <h3>Get average age</h3>
+    <p>Write the function getAverageAge(users) that gets an array of objects with property age and returns the average age.</p>
+    <p>The formula for the average is (age1 + age2 + ... + ageN) / N.</p>
+    <span>For instance:</span>
+    <pre>
+        <code>
+    let john = { name: "John", age: 25 };
+    let pete = { name: "Pete", age: 30 };
+    let mary = { name: "Mary", age: 29 };
+    
+    let arr = [ john, pete, mary ];
+    
+    alert( getAverageAge(arr) ); // (25 + 30 + 29) / 3 = 28</code>
+    </pre>
+
+    <hr>
+
+    <h3>Filter unique array members</h3>
+    <p>Let arr be an array.</p>
+    <p>Create a function unique(arr) that should return an array with unique items of arr.</p>
+    <span>For instance:</span>
+    <pre>
+        <code>
+    function unique(arr) {
+        /* your code */
+    }
+    
+    let strings = ["Hare", "Krishna", "Hare", "Krishna",
+        "Krishna", "Krishna", "Hare", "Hare", ":-O"
+    ];
+    
+    alert( unique(strings) ); // Hare, Krishna, :-O </code>
+    </pre>
+
+    <hr>
+
+    <h3>Create keyed object from array</h3>
+    <p>Let’s say we received an array of users in the form {id:..., name:..., age:... }.</p>
+    <p>Create a function groupById(arr) that creates an object from it, with id as the key, and array items as values.</p>
+    <span>For example:</span>
+    <pre>
+        <code>
+    let users = [
+        {id: 'john', name: "John Smith", age: 20},
+        {id: 'ann', name: "Ann Smith", age: 24},
+        {id: 'pete', name: "Pete Peterson", age: 31},
+    ];
+
+    let usersById = groupById(users);
+    
+    /*
+    // after the call we should have:
+    
+    usersById = {
+        john: {id: 'john', name: "John Smith", age: 20},
+        ann: {id: 'ann', name: "Ann Smith", age: 24},
+        pete: {id: 'pete', name: "Pete Peterson", age: 31},
+    }
+    */      </code>
+    </pre>
+    <p>Such function is really handy when working with server data</p>
+    <p>In this task we assume that id is unique. There may be no two array items with the same id.</p>
+    <p>Please use array .reduce method in the solution.</p>
+
+
+    <hr>
+
+
+    <h2 id="objects"><a href="https://javascript.info/object-basics" target="_blank">Objects</a></h2>
+
+    <h3>Hello, object</h3>
+    <p>Write the code, one line for each action:</p>
+    <ol>
+        <li>Create an empty object user.</li>
+        <li>Add the property name with the value John.</li>
+        <li>Add the property surname with the value Smith.</li>
+        <li>Change the value of the name to Pete.</li>
+        <li>Remove the property name from the object.</li>
+    </ol>
+
+    <hr>
+
+    <h3>Check for emptiness</h3>
+    <p>Write the function isEmpty(obj) which returns true if the object has no properties, false otherwise.</p>
+    <span>Should work like that:</span>
+    <pre>
+        <code>
+    let schedule = {};
+
+    alert( isEmpty(schedule) ); // true
+
+    schedule["8:30"] = "get up";
+
+    alert( isEmpty(schedule) ); // false   </code>
+    </pre>
+
+    <hr>
+
+    <h3>Sum object properties</h3>
+    <p>We have an object storing salaries of our team:</p>
+    <pre>
+        <code>
+    let salaries = {
+        John: 100,
+        Ann: 160,
+        Pete: 130
+    }</code>
+    </pre>
+    <p>Write the code to sum all salaries and store in the variable sum. Should be 390 in the example above.</p>
+    <p>If salaries is empty, then the result must be 0.</p>
+
+    <hr>
+
+    <h3>Multiply numeric property values by 2</h3>
+    <p>Create a function multiplyNumeric(obj) that multiplies all numeric property values of obj by 2.</p>
+    <span>For instance:</span>
+    <pre>
+        <code>
+    // before the call
+    let menu = {
+      width: 200,
+      height: 300,
+      title: "My menu"
+    };
+    
+    multiplyNumeric(menu);
+    
+    // after the call
+    menu = {
+      width: 400,
+      height: 600,
+      title: "My menu"
+    };</code>
+    </pre>
+    <p>Please note that multiplyNumeric does not need to return anything. It should modify the object in-place.</p>
+    <p>P.S. Use typeof to check for a number here.</p>
+
+    <hr>
+
+    <h3>Using "this" in object literal</h3>
+    <p>Here the function makeUser returns an object.</p>
+    <p>What is the result of accessing its ref? Why?</p>
+    <pre>
+        <code>
+    function makeUser() {
+        return {
+            name: "John",
+            ref: this
+        };
+    }
+
+    let user = makeUser();
+
+    alert( user.ref.name ); // What's the result?</code>
+    </pre>
+
+    <hr>
+
+    <h3>Create a calculator</h3>
+    <p>Create an object calculator with three methods:</p>
+    <ul>
+        <li>read() prompts for two values and saves them as object properties with names a and b respectively.</li>
+        <li>sum() returns the sum of saved values.</li>
+        <li>mul() multiplies saved values and returns the result.</li>
+    </ul>
+    <pre>
+        <code>
+    let calculator = {
+        // ... your code ...
+    };
+    
+    calculator.read();
+    alert( calculator.sum() );
+    alert( calculator.mul() );</code>
+    </pre>
+
+    <hr>
+
+    <h3>Chaining</h3>
+    <p>There’s a ladder object that allows to go up and down:</p>
+    <pre>
+        <code>
+    let ladder = {
+        step: 0,
+        up() {
+            this.step++;
+        },
+        down() {
+            this.step--;
+        },
+        showStep: function() { // shows the current step
+            alert( this.step );
+        }
+    };</code>
+    </pre>
+    <p>Now, if we need to make several calls in sequence, can do it like this:</p>
+    <pre>
+        <code>
+    ladder.up();
+    ladder.up();
+    ladder.down();
+    ladder.showStep(); // 1
+    ladder.down();
+    ladder.showStep(); // 0</code>
+    </pre>
+    <p>Modify the code of up, down and showStep to make the calls chainable, like this:</p>
+    <pre>
+        <code>
+    ladder.up().up().down().showStep().down().showStep(); // shows 1 then 0</code>
+    </pre>
+    <p>Such approach is widely used across JavaScript libraries.</p>
+
+    <hr>
+
+    <h3>Two functions – one object</h3>
+    <p>Is it possible to create functions <code>A</code> and <code>B</code> so that <code>new A() == new B()?</p></code>
+    <pre>
+        <code>
+    function A() { ... }
+    function B() { ... }
+    
+    let a = new A();
+    let b = new B();
+    
+    alert( a == b ); // true </code>
+    </pre>
+    <p>If it is, then provide an example of their code.</p>
+
+    <hr> 
+
+    <h3>Create new Calculator</h3>
+    <p>Create a constructor function <code>Calculator</code> that creates objects with 3 methods:</p>
+    <ul>
+        <li><code>read()</code> prompts for two values and saves them as object properties with names a and b respectively.</li>
+        <li><code>sum()</code> returns the sum of these properties.</li>
+        <li><code>mul()</code> returns the multiplication product of these properties.</li>
+    </ul>
+    <span>For instance:</span>
+    <pre>
+        <code>
+    let calculator = new Calculator();
+    calculator.read();
+
+    alert( "Sum=" + calculator.sum() );
+    alert( "Mul=" + calculator.mul() );</code>
+    </pre>
+
+    <hr>
+
+    <h3>Create new Accumulator</h3>
+    <p>Create a constructor function <code>Accumulator(startingValue).</code></p>
+    <p>Object that it creates should:</p>
+    <ul>
+        <li>Store the “current value” in the property <code>value</code>. The starting value is set to the argument of the constructor <code>startingValue</code>.</li>
+        <li>The <code>read()</code> method should use <code>prompt</code> to read a new number and add it to <code>value</code>.</li>
+    </ul>
+    <p>In other words, the <code>value</code> property is the sum of all user-entered values with the initial value <code>startingValue</code>.</p>
+    <p>Here’s the demo of the code:</p>
+    <pre>
+        <code>
+    let accumulator = new Accumulator(1); // initial value 1
+
+    accumulator.read(); // adds the user-entered value
+    accumulator.read(); // adds the user-entered value
+
+    alert(accumulator.value); // shows the sum of these values</code>
+    </pre>
+</div>
+    <!--
+    <script src="js/scriptVariables.js"></script>
+    <script src="js/scriptFunctions.js"></script>
+    -->
+    <!--
+    This script places a badge on your repl's full-browser view back to your repl's cover page. 
+    Try various colors for the theme: 
+    dark, light, red, orange, yellow, lime, green, teal, blue, blurple, magenta, pink!
+    -->
+    <script src="https://replit.com/public/js/replit-badge-v2.js" theme="orange" position="bottom-right"></script>
+</body>
+
+</html>
