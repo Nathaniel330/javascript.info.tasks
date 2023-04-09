@@ -2,15 +2,16 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="./img/100devs.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>#100Devs JavaScript.info Tasks</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 <nav>
-    <span class="top">Sticky</span>
+    <span class="top">>>></span>
     <span>Jump to:</span>
     <ul>
         <li><a href="#variables">Variables</a></li>
@@ -19,18 +20,36 @@
         <li><a href="#array-methods">Array Methods</a></li>
         <li><a href="#objects">Objects</a></li>
     </ul>
+
+    <br>
+
+    <span>Need to read more?</span>
+    <br><br>
+    <span>Go to <a href="https://javascript.info/">JavaScript.info</a>:</span>
+    <aside>
+        <ul>
+            <li><a href="https://javascript.info/variables" target="_blank">Variables</a></li>
+            <li><a href="https://javascript.info/function-basics" target="_blank">Function Basics</a></li>
+            <li><a href="https://javascript.info/function-expressions" target="_blank">Function Expressions</a></li>
+            <li><a href="https://javascript.info/arrow-functions-basics" target="_blank">Arrow Function Basics</a></li>
+            <li><a href="https://javascript.info/array-methods" target="_blank">Array Methods</a></li>
+            <li><a href="https://javascript.info/object-basics" target="_blank">Objects</a></li>
+            <li><a href="https://javascript.info/async" target="_blank">Async/Await</a></li>
+        </ul>
+    </aside>
 </nav>
 <div>
     <h1>JavaScript Fundamentals</h1>
+    <p>Made for the #100Devs Homework on <a href="https://javascript.info/">JavaScript.info</a> tasks</p>
 
     <h2 id="variables"><a href="https://javascript.info/variables" target="_blank">Variables</a></h2>
     
     <h3>Working with variables</h3>
     <ol>
         <li>Declare two variables: <code>admin</code> and <code>name</code>.</li>
-        <li>Assign the value "John" to name.</li>
-        <li>Copy the value from name to admin.</li>
-        <li>Show the value of admin using alert (must output “John”).</li>
+        <li>Assign the value <code>"John"</code> to <code>name</code>.</li>
+        <li>Copy the value from <code>name</code> to <code>admin</code>.</li>
+        <li>Show the value of <code>admin</code> using <code>alert</code> (must output “John”).</li>
     </ol>
 
     <hr>
@@ -49,16 +68,16 @@
         <code>
     const birthday = '18.04.1982';
     
-    const age = someCode(birthday);    </code>
+    const age = someCode(birthday);</code>
     </pre>
-    <p>Here we have a constant birthday for the date, and also the age constant.</p>
+    <p>Here we have a constant <code>birthday</code> for the date, and also the <code>age</code> constant.</p>
     <p>
-        The age is calculated from birthday using someCode(), 
+        The <code>age</code> is calculated from <code>birthday</code> using <code>someCode()</code>, 
         which means a function call that we didn’t explain yet (we will soon!),
         but the details don’t matter here, 
-        the point is that age is calculated somehow based on the birthday.
+        the point is that <code>age</code> is calculated somehow based on the <code>birthday</code>.
     </p>
-    <p>Would it be right to use upper case for birthday? For age? Or even for both?</p>
+    <p>Would it be right to use upper case for <code>birthday</code>? For <code>age</code>? Or even for both?</p>
     <pre>
         <code>
     const BIRTHDAY = '18.04.1982'; // make birthday uppercase?
@@ -84,7 +103,7 @@
     <h2 id="functions"><a href="https://javascript.info/function-basics" target="_blank">Functions — Basics</a></h2>
     
     <h3>Is "else" required?</h3>
-    <p>The following function returns true if the parameter age is greater than 18.</p>
+    <p>The following function returns <code>true</code> if the parameter <code>age</code> is greater than <code>18</code>.</p>
     <p>Otherwise it asks for a confirmation and returns its result:</p>
     <pre>
         <code>
@@ -97,7 +116,7 @@
         }
     }    </code>
     </pre>
-    <p>Will the function work differently if else is removed?</p>
+    <p>Will the function work differently if <code>else</code> is removed?</p>
     <pre>
         <code>
     function checkAge(age) {
@@ -113,7 +132,7 @@
     <hr>
     
     <h3>Rewrite the function using '?' or '||'</h3>
-    <p>The following function returns true if the parameter age is greater than 18.</p>
+    <p>The following function returns <code>true</code> if the parameter <code>age</code> is greater than <code>18</code>.</p>
     <p>Otherwise it asks for a confirmation and returns its result</p>
     <pre>
     <code>
@@ -125,17 +144,17 @@
         }
     }    </code>
     </pre>
-    <p>Rewrite it, to perform the same, but without if, in a single line.</p>
+    <p>Rewrite it, to perform the same, but without <code>if</code>, in a single line.</p>
     <p>Make two variants of checkAge:</p>
     <ol>
-        <li>Using a question mark operator ?</li>
-        <li>Using OR ||</li>
+        <li>Using a question mark operator <code>?</code></li>
+        <li>Using OR <code>||</code></li>
     </ol>
 
     <hr>
 
     <h3>Function min(a, b)</h3>
-    <p>Write a function min(a,b) which returns the least of two numbers a and b.</p>
+    <p>Write a function <code>min(a,b)</code> which returns the least of two numbers <code>a</code> and <code>b</code>.</p>
     <p>For instance:</p>
     <pre>
         <code>
@@ -147,8 +166,8 @@
     <hr>
 
     <h3>Function pow(x, n)</h3>
-    <p>Write a function pow(x,n) that returns x in power n. Or, in other words, 
-    multiplies x by itself n times and returns the result.</p>
+    <p>Write a function <code>pow(x,n)</code> that returns <code>x</code> in power <code>n</code>. Or, in other words, 
+    multiplies <code>x</code> by itself <code>n</code> times and returns the result.</p>
     <pre>
         <code>
     pow(3, 2) = 3 * 3 = 9
@@ -187,7 +206,7 @@
     <h2 id="array-methods"><a href="https://javascript.info/array-methods" target="_blank">Array Methods</a></h2>
     
     <h3>Translate border-left-width to borderLeftWidth</h3>
-    <p>Write the function camelize(str) that changes dash-separated words like “my-short-string” into camel-cased “myShortString”.</p>
+    <p>Write the function <code>camelize(str)</code> that changes dash-separated words like “my-short-string” into camel-cased “myShortString”.</p>
 
     <p>That is: removes all dashes, each word after dash becomes uppercased.</p>
 
@@ -200,12 +219,12 @@
     camelize("-webkit-transition") == 'WebkitTransition';    </code>
     </pre>
 
-    <p>P.S. Hint: use split to split the string into an array, transform it and join back.</p>
+    <p>P.S. Hint: use <code>split</code> to split the string into an array, transform it and <code>join</code> back.</p>
 
     <hr>
 
     <h3>Filter range</h3>
-    <p>Write a function filterRange(arr, a, b) that gets an array arr, looks for elements with values higher or equal to a and lower or equal to b and return a result as an array.</p>
+    <p>Write a function <code>filterRange(arr, a, b)</code> that gets an array <code>arr</code>, looks for elements with values higher or equal to <code>a</code> and lower or equal to <code>b</code> and return a result as an array.</p>
     <p>The function should not modify the array. It should return the new array.</p>
     <span>For instance:</span>
     <pre>
@@ -222,7 +241,7 @@
     <hr>
 
     <h3>Filter range "in place"</h3>
-    <p>Write a function filterRangeInPlace(arr, a, b) that gets an array arr and removes from it all values except those that are between a and b. The test is: a ≤ arr[i] ≤ b.</p>
+    <p>Write a function <code>filterRangeInPlace(arr, a, b)</code> that gets an array <code>arr</code> and removes from it all values except those that are between <code>a</code> and <code>b</code>. The test is: <code>a ≤ arr[i] ≤ b</code>.</p>
     <p>The function should only modify the array. It should not return anything.</p>
     <span>For instance:</span>
     <pre>
@@ -249,8 +268,8 @@
     <hr>
 
     <h3>Copy and sort array</h3>
-    <p>We have an array of strings arr. We’d like to have a sorted copy of it, but keep arr unmodified.</p>
-    <p>Create a function copySorted(arr) that returns such a copy.</p>
+    <p>We have an array of strings <code>arr</code>. We’d like to have a sorted copy of it, but keep <code>arr</code> unmodified.</p>
+    <p>Create a function <code>copySorted(arr)</code> that returns such a copy.</p>
     <pre>
         <code>
     let arr = ["HTML", "JavaScript", "CSS"];
@@ -264,12 +283,12 @@
     <hr>
 
     <h3>Create an extendable calculator</h3>
-    <p>Create a constructor function Calculator that creates “extendable” calculator objects.</p>
+    <p>Create a constructor function <code>Calculator</code> that creates “extendable” calculator objects.</p>
     <p>The task consists of two parts.</p>
     <ol>
         <li>
             <section>
-                <p>First, implement the method calculate(str) that takes a string like "1 + 2" in the format “NUMBER operator NUMBER” (space-delimited) and returns the result. Should understand plus + and minus -.</p>
+                <p>First, implement the method <code>calculate(str)</code> that takes a string like <code>"1 + 2"</code> in the format “NUMBER operator NUMBER” (space-delimited) and returns the result. Should understand plus <code>+</code> and minus <code>-</code>.</p>
 
                 <span>Usage example:</span>
                 <pre>
@@ -282,8 +301,8 @@
         </li>
         <li>
             <section>
-                <p>Then add the method addMethod(name, func) that teaches the calculator a new operation. It takes the operator name and the two-argument function func(a,b) that implements it.</p>
-                <p>For instance, let’s add the multiplication *, division / and power **:</p>
+                <p>Then add the method <code>addMethod(name, func)</code> that teaches the calculator a new operation. It takes the operator <code>name</code> and the two-argument function <code>func(a,b)</code> that implements it.</p>
+                <p>For instance, let’s add the multiplication <code>*</code>, division <code>/</code> and power <code>**</code>:</p>
 
                 <pre>
                     <code>
@@ -305,7 +324,7 @@
     <hr>
 
     <h3>Map to names</h3>
-    <p>You have an array of user objects, each one has user.name. Write the code that converts it into an array of names.</p>
+    <p>You have an array of <code>user</code> objects, each one has <code>user.name</code>. Write the code that converts it into an array of names.</p>
     <span>For instance:</span>
     <pre>
         <code>
@@ -323,8 +342,8 @@
     <hr>
 
     <h3>Map to objects</h3>
-    <p>You have an array of user objects, each one has name, surname and id.</p>
-    <p>Write the code to create another array from it, of objects with id and fullName, where fullName is generated from name and surname.</p>
+    <p>You have an array of <code>user</code> objects, each one has <code>name</code>, <code>surname</code> and <code>id</code>.</p>
+    <p>Write the code to create another array from it, of objects with <code>id</code> and <code>fullName</code>, where <code>fullName</code> is generated from <code>name</code> and <code>surname</code>.</p>
     <span>For instance:</span>
     <pre>
         <code>
@@ -347,12 +366,12 @@
     alert( usersMapped[0].id ) // 1
     alert( usersMapped[0].fullName ) // John Smith</code>
     </pre>
-    <p>So, actually you need to map one array of objects to another. Try using => here. There’s a small catch.</p>
+    <p>So, actually you need to map one array of objects to another. Try using <code>=></code> here. There’s a small catch.</p>
 
     <hr>
 
     <h3>Sort users by age</h3>
-    <p>Write the function sortByAge(users) that gets an array of objects with the age property and sorts them by age.</p>
+    <p>Write the function <code>sortByAge(users)</code> that gets an array of objects with the <code>age</code> property and sorts them by <code>age</code>.</p>
     <span>For instance:</span>
     <pre>
         <code>
@@ -373,8 +392,8 @@
     <hr>
 
     <h3>Shuffle an array</h3>
-    <p>Write the function shuffle(array) that shuffles (randomly reorders) elements of the array.</p>
-    <p>Multiple runs of shuffle may lead to different orders of elements. For instance:</p>
+    <p>Write the function <code>shuffle(array)</code> that shuffles (randomly reorders) elements of the array.</p>
+    <p>Multiple runs of <code>shuffle</code> may lead to different orders of elements. For instance:</p>
     <pre>
         <code>
     let arr = [1, 2, 3];
@@ -389,13 +408,13 @@
     // arr = [3, 1, 2]
     // ... </code>
     </pre>
-    <p>All element orders should have an equal probability. For instance, [1,2,3] can be reordered as [1,2,3] or [1,3,2] or [3,1,2] etc, with equal probability of each case.</p>
+    <p>All element orders should have an equal probability. For instance, <code>[1,2,3]</code> can be reordered as <code>[1,2,3]</code> or <code>[1,3,2]</code> or <code>[3,1,2]</code> etc, with equal probability of each case.</p>
 
     <hr>
 
     <h3>Get average age</h3>
-    <p>Write the function getAverageAge(users) that gets an array of objects with property age and returns the average age.</p>
-    <p>The formula for the average is (age1 + age2 + ... + ageN) / N.</p>
+    <p>Write the function <code>getAverageAge(users)</code> that gets an array of objects with property <code>age</code> and returns the average age.</p>
+    <p>The formula for the average is <code>(age1 + age2 + ... + ageN) / N</code>.</p>
     <span>For instance:</span>
     <pre>
         <code>
@@ -411,8 +430,8 @@
     <hr>
 
     <h3>Filter unique array members</h3>
-    <p>Let arr be an array.</p>
-    <p>Create a function unique(arr) that should return an array with unique items of arr.</p>
+    <p>Let <code>arr</code> be an array.</p>
+    <p>Create a function <code>unique(arr)</code> that should return an array with unique items of <code>arr</code>.</p>
     <span>For instance:</span>
     <pre>
         <code>
@@ -430,8 +449,8 @@
     <hr>
 
     <h3>Create keyed object from array</h3>
-    <p>Let’s say we received an array of users in the form {id:..., name:..., age:... }.</p>
-    <p>Create a function groupById(arr) that creates an object from it, with id as the key, and array items as values.</p>
+    <p>Let’s say we received an array of users in the form <code>{id:..., name:..., age:... }</code>.</p>
+    <p>Create a function <code>groupById(arr)</code> that creates an object from it, with <code>id</code>id as the key, and array items as values.</p>
     <span>For example:</span>
     <pre>
         <code>
@@ -454,8 +473,8 @@
     */      </code>
     </pre>
     <p>Such function is really handy when working with server data</p>
-    <p>In this task we assume that id is unique. There may be no two array items with the same id.</p>
-    <p>Please use array .reduce method in the solution.</p>
+    <p>In this task we assume that <code>id</code> is unique. There may be no two array items with the same <code>id</code>.</p>
+    <p>Please use array <code>.reduce</code> method in the solution.</p>
 
 
     <hr>
@@ -466,17 +485,17 @@
     <h3>Hello, object</h3>
     <p>Write the code, one line for each action:</p>
     <ol>
-        <li>Create an empty object user.</li>
-        <li>Add the property name with the value John.</li>
-        <li>Add the property surname with the value Smith.</li>
-        <li>Change the value of the name to Pete.</li>
-        <li>Remove the property name from the object.</li>
+        <li>Create an empty object <code>user</code>.</li>
+        <li>Add the property <code>name</code> with the value <code>John</code>.</li>
+        <li>Add the property <code>surname</code> with the value <code>Smith</code>.</li>
+        <li>Change the value of the <code>name</code> to <code>Pete</code>.</li>
+        <li>Remove the property <code>name</code> from the object.</li>
     </ol>
 
     <hr>
 
     <h3>Check for emptiness</h3>
-    <p>Write the function isEmpty(obj) which returns true if the object has no properties, false otherwise.</p>
+    <p>Write the function <code>isEmpty(obj)</code> which returns <code>true</code> if the object has no properties, <code>false</code> otherwise.</p>
     <span>Should work like that:</span>
     <pre>
         <code>
@@ -501,13 +520,13 @@
         Pete: 130
     }</code>
     </pre>
-    <p>Write the code to sum all salaries and store in the variable sum. Should be 390 in the example above.</p>
-    <p>If salaries is empty, then the result must be 0.</p>
+    <p>Write the code to sum all salaries and store in the variable <code>sum</code>. Should be <code>390</code> in the example above.</p>
+    <p>If <code>salaries</code> is empty, then the result must be <code>0</code>.</p>
 
     <hr>
 
     <h3>Multiply numeric property values by 2</h3>
-    <p>Create a function multiplyNumeric(obj) that multiplies all numeric property values of obj by 2.</p>
+    <p>Create a function <code>multiplyNumeric(obj)</code> that multiplies all numeric property values of <code>obj</code> by <code>2</code>.</p>
     <span>For instance:</span>
     <pre>
         <code>
@@ -527,14 +546,14 @@
       title: "My menu"
     };</code>
     </pre>
-    <p>Please note that multiplyNumeric does not need to return anything. It should modify the object in-place.</p>
-    <p>P.S. Use typeof to check for a number here.</p>
+    <p>Please note that <code>multiplyNumeric</code> does not need to return anything. It should modify the object in-place.</p>
+    <p>P.S. Use <code>typeof</code> to check for a number here.</p>
 
     <hr>
 
     <h3>Using "this" in object literal</h3>
-    <p>Here the function makeUser returns an object.</p>
-    <p>What is the result of accessing its ref? Why?</p>
+    <p>Here the function <code>makeUser</code> returns an object.</p>
+    <p>What is the result of accessing its <code>ref</code>? Why?</p>
     <pre>
         <code>
     function makeUser() {
@@ -552,11 +571,11 @@
     <hr>
 
     <h3>Create a calculator</h3>
-    <p>Create an object calculator with three methods:</p>
+    <p>Create an object <code>calculator</code> with three methods:</p>
     <ul>
-        <li>read() prompts for two values and saves them as object properties with names a and b respectively.</li>
-        <li>sum() returns the sum of saved values.</li>
-        <li>mul() multiplies saved values and returns the result.</li>
+        <li><code>read()</code> prompts for two values and saves them as object properties with names <code>a</code> and <code>b</code> respectively.</li>
+        <li><code>sum()</code> returns the sum of saved values.</li>
+        <li><code>mul()</code> multiplies saved values and returns the result.</li>
     </ul>
     <pre>
         <code>
@@ -572,7 +591,7 @@
     <hr>
 
     <h3>Chaining</h3>
-    <p>There’s a ladder object that allows to go up and down:</p>
+    <p>There’s a <code>ladder</code> object that allows to go up and down:</p>
     <pre>
         <code>
     let ladder = {
@@ -598,7 +617,7 @@
     ladder.down();
     ladder.showStep(); // 0</code>
     </pre>
-    <p>Modify the code of up, down and showStep to make the calls chainable, like this:</p>
+    <p>Modify the code of <code>up</code>, <code>down</code> and <code>showStep</code> to make the calls chainable, like this:</p>
     <pre>
         <code>
     ladder.up().up().down().showStep().down().showStep(); // shows 1 then 0</code>
@@ -664,13 +683,10 @@
     <!--
     <script src="js/scriptVariables.js"></script>
     <script src="js/scriptFunctions.js"></script>
+    <script src="js/scriptArrowFunctions.js"></script>
+    <script src="js/scriptMethods.js"></script>
+    <script src="js/scriptArrowFunctions.js"></script>
     -->
-    <!--
-    This script places a badge on your repl's full-browser view back to your repl's cover page. 
-    Try various colors for the theme: 
-    dark, light, red, orange, yellow, lime, green, teal, blue, blurple, magenta, pink!
-    -->
-    <script src="https://replit.com/public/js/replit-badge-v2.js" theme="orange" position="bottom-right"></script>
 </body>
 
 </html>
