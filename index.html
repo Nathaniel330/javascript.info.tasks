@@ -51,7 +51,25 @@
         <li>Copy the value from <code>name</code> to <code>admin</code>.</li>
         <li>Show the value of <code>admin</code> using <code>alert</code> (must output “John”).</li>
     </ol>
+    <button id="varTask1Button" class="showAnswer">My Answer</button>
+    <dialog id="varTask1Dialog" class="modal">
+        <button id="varTask1Close" class="close">X</button><span> (or press "Escape" to close)</span>
+        <pre>
+            <code>
+let admin, name;
 
+name = "John";
+
+admin = name;
+
+function showAlert() {
+    alert(admin)
+}</code>
+        </pre>
+        <button id="varTask1Run">Run</button>
+    </dialog>
+    
+    
     <hr>
     
     <h3>Giving the right name</h3>
@@ -59,6 +77,15 @@
         <li>Create a variable with the name of our planet. How would you name such a variable?</li>
         <li>Create a variable to store the name of a current visitor to a website. How would you name that variable?</li>
     </ol>
+    <button id="varTask2Button" class="showAnswer">My Answer</button>
+    <dialog id="varTask2Dialog" class="modal">
+        <button id="varTask2Close" class="close">X</button><span> (or press "Escape" to close)</span>
+        <pre>
+            <code>
+const ourPlanetName = "Earth";
+let currentUser;</code>
+        </pre>
+    </dialog>
 
     <hr>
     
@@ -85,7 +112,7 @@
     const AGE = someCode(BIRTHDAY); // make age uppercase?    </code>
     </pre>
 
-    <!--
+    <!-- javascript.info solution
     We generally use upper case for constants that are “hard-coded”. Or, in other words, 
     when the value is known prior to execution and directly written into the code.
 
@@ -96,7 +123,16 @@
     But it is a bit “less of a constant” than birthday: it is calculated, so we should keep the lower case for it.
     -->
 
+    <button id="varTask3Button" class="showAnswer">My Answer</button>
+    <dialog id="varTask3Dialog" class="modal">
+        <button id="varTask3Close" class="close">X</button><span> (or press "Escape" to close)</span>
+        <pre>
+            <code>
+Making the variables upper case does not do anything in Javascript. However, by convention variables in upper case mean that these values should be constant or should not change. If BIRTHDAY and AGE are intended to have values that should not be altered, It is alright for both to use upper case.</code>
+        </pre>
+    </dialog>
     
+
     <hr>
 
 
@@ -128,6 +164,14 @@
     }    </code>
     </pre>
     <p>Is there any difference in the behavior of these two variants?</p>
+    <button id="functionTask1Button" class="showAnswer">My Answer</button>
+    <dialog id="functionTask1Dialog" class="modal">
+        <button id="functionTask1Close" class="close">X</button><span> (or press "Escape" to close)</span>
+        <pre>
+            <code>
+The current function will work the same even with the 'else' removed. The two variants will not have difference in behavior.</code>
+        </pre>
+    </dialog>
 
     <hr>
     
@@ -150,6 +194,23 @@
         <li>Using a question mark operator <code>?</code></li>
         <li>Using OR <code>||</code></li>
     </ol>
+    <button id="functionTask2Button" class="showAnswer">My Answer</button>
+    <dialog id="functionTask2Dialog" class="modal">
+        <button id="functionTask2Close" class="close">X</button><span> (or press "Escape" to close)</span>
+        <pre>
+            <code>
+// Using a question mark operator ?
+const fnRewriteV1 = function(age) {
+    return age > 18 ? true : confirm('Did your parents allow you?')
+}
+
+// Using OR ||
+const fnRewriteV2 = function(age) {
+    return age > 18 || confirm('Did your parents allow you?')
+}</code>
+        </pre>
+        <button id="functionTask2Run">Run</button>
+    </dialog>
 
     <hr>
 
@@ -162,6 +223,17 @@
     min(3, -1) == -1
     min(1, 1) == 1    </code>
     </pre>
+    <button id="functionTask3Button" class="showAnswer">My Answer</button>
+    <dialog id="functionTask3Dialog" class="modal">
+        <button id="functionTask3Close" class="close">X</button><span> (or press "Escape" to close)</span>
+        <pre>
+            <code>
+function min(a, b) {
+    return a > b ? b : a
+}</code>
+        </pre>
+        <button id="functionTask3Run">Run</button>
+    </dialog>
 
     <hr>
 
@@ -176,6 +248,23 @@
     </pre>
     <p>Create a web-page that prompts for x and n, and then shows the result of pow(x,n).</p>
     <p>P.S. In this task the function should support only natural values of n: integers up from 1.</p>
+    <button id="functionTask4Button" class="showAnswer">My Answer</button>
+    <dialog id="functionTask4Dialog" class="modal">
+        <button id="functionTask4Close" class="close">X</button><span> (or press "Escape" to close)</span>
+        <pre>
+            <code>
+function showPowers() {
+    const x = prompt('What would be the value of x?')
+    const n = prompt('What would be the value of y?')
+    if (n < 1) {
+        alert(`Power ${n} in not supported, use a positive integer`)
+    }
+    const resultxN = x**n
+    alert(`x=${x}\ny=${n}\n${x}^${n}=${resultxN}`)
+}</code>
+        </pre>
+        <button id="functionTask4Run">Run</button>
+    </dialog>
 
 
     <hr>
@@ -198,6 +287,32 @@
         function() { alert("You canceled the execution."); }
     );    </code>
     </pre>
+    <button id="arrowFnTask1Button" class="showAnswer">My Answer</button>
+    <dialog id="arrowFnTask1Dialog" class="modal">
+        <button id="arrowFnTask1Close" class="close">X</button><span> (or press "Escape" to close)</span>
+        <pre>
+            <code>
+const ask = (question, yes, no) => {
+
+    question = "Do you agree?"
+
+    yes = () => {
+        alert("You agreed.")
+    }
+
+    no = () => {
+        alert("You canceled the execution.")
+    }
+
+    if (confirm(question)) {
+        return yes()
+    } else {
+        return no()
+    }
+}</code>
+        </pre>
+        <button id="arrowFnTask1Run">Run</button>
+    </dialog>
 
 
     <hr>
@@ -687,6 +802,7 @@
     <script src="js/scriptMethods.js"></script>
     <script src="js/scriptArrowFunctions.js"></script>
     -->
+    <script src="/js/master.js" type="module"></script>
 </body>
 
 </html>
