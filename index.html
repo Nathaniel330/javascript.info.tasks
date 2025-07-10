@@ -804,6 +804,10 @@ const ask = (question, yes, no) => {
     -->
     <script src="/js/master.js" type="module"></script>
     <script type='text/javascript'>
+	window.onEmbeddedMessagingButtonCreated = function(button) {
+	    console.log("Messaging button created:", button);
+	    embeddedservice_bootstrap.utilAPI.launchChat();
+	};
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
