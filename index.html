@@ -803,6 +803,25 @@ const ask = (question, yes, no) => {
     <script src="js/scriptArrowFunctions.js"></script>
     -->
     <script src="/js/master.js" type="module"></script>
+    <script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DVG0000047GQq',
+				'Agentforce',
+				'https://smithandsolomon--full.sandbox.my.site.com/ESWAgentforce1747629399484',
+				{
+					scrt2URL: 'https://smithandsolomon--full.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+    </script>
+    <script type='text/javascript' src='https://smithandsolomon--full.sandbox.my.site.com/ESWAgentforce1747629399484/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 </body>
 
 </html>
