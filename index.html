@@ -804,10 +804,10 @@ const ask = (question, yes, no) => {
     -->
     <script src="/js/master.js" type="module"></script>
     <script type='text/javascript'>
-	window.onEmbeddedMessagingReady = function() {
-	    console.log("Embedded Messaging is ready.");
-	    embeddedservice_bootstrap.utilAPI.launchChat();
-	};
+	// window.onEmbeddedMessagingReady = function() {
+	//     console.log("Embedded Messaging is ready.");
+	//     embeddedservice_bootstrap.utilAPI.launchChat();
+	// };
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
@@ -820,6 +820,8 @@ const ask = (question, yes, no) => {
 					scrt2URL: 'https://smithandsolomon--full.sandbox.my.salesforce-scrt.com'
 				}
 			);
+
+			console.log("Embedded Messaging is ready.");
 		} catch (err) {
 			console.error('Error loading Embedded Messaging: ', err);
 		}
